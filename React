@@ -1,0 +1,23 @@
+import React, { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+
+function MarkdownApp() {
+  const [markdown, setMarkdown] = useState('# Hello Markdown');
+
+  return (
+    <div>
+      <textarea 
+        value={markdown} 
+        onChange={(e) => setMarkdown(e.target.value)} 
+        rows="10" 
+        cols="50" 
+      />
+      <div>
+        <h3>Preview</h3>
+        <ReactMarkdown>{markdown}</ReactMarkdown>
+      </div>
+    </div>
+  );
+}
+
+export default MarkdownApp;
